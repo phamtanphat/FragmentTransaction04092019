@@ -24,6 +24,7 @@
         android:text="Add iOS" />
 
     <Button
+        android:onClick="replaceAndroid"
         android:id="@+id/buttonReplaceAndroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +32,7 @@
         android:text="Replace Android" />
 
     <Button
+        android:onClick="replaceIos"
         android:id="@+id/buttonReplaceios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,6 +40,7 @@
         android:text="Replace iOS" />
 
     <Button
+        android:onClick="removeAndroid"
         android:id="@+id/buttonRemoveAndroid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +49,7 @@
         android:text="Remove Android" />
 
     <Button
+        android:onClick="removeIos"
         android:id="@+id/buttonRemoveios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
