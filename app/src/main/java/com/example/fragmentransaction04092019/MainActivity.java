@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         AndroidFragment androidFragment = new AndroidFragment();
         fragmentTransaction.add(R.id.liearlayoutContainer, androidFragment , "android");
+        fragmentTransaction.addToBackStack("android");
         fragmentTransaction.commit();
     }
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         IosFragment iosFragment = new IosFragment();
         fragmentTransaction.add(R.id.liearlayoutContainer, iosFragment,"ios");
+        fragmentTransaction.addToBackStack("ios");
         fragmentTransaction.commit();
     }
 
@@ -71,6 +73,37 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
     }
+    public void popbackstack(View view) {
+        fragmentManager.popBackStack(0, 0);
+    }
 
+    public void Detach(View view) {
+        AndroidFragment androidFragment = (AndroidFragment) fragmentManager.findFragmentByTag("android");
+        if (androidFragment != null){
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.detach(androidFragment);
+            fragmentTransaction.commit();
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("BBB", fragmentManager.getFragments().size() + "");
+            }
+        },2000);
+    }
 
+    public void Attach(View view) {
+        AndroidFragment androidFragment = (AndroidFragment) fragmentManager.findFragmentByTag("android");
+        if (androidFragment != null){
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.attach(androidFragment);
+            fragmentTransaction.commit();
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Log.d("BBB", fragmentManager.getFragments().size() + "");
+            }
+        },2000);
+    }
 }

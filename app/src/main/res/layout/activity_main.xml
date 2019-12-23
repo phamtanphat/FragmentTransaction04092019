@@ -58,6 +58,7 @@
         android:text="Remove iOS" />
 
     <Button
+        android:onClick="popbackstack"
         android:id="@+id/buttonPopBackStack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,6 +66,7 @@
         android:text="Pop back stack" />
 
     <Button
+        android:onClick="Detach"
         android:id="@+id/buttonDetach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -73,7 +75,7 @@
         android:text="Detach" />
 
     <Button
-
+        android:onClick="Attach"
         android:id="@+id/buttonAttach"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
